@@ -406,8 +406,51 @@
 
 /* Mobile UX tweaks */
 @media (max-width: 640px) {
-  .btn-primary { padding: 0.625rem 1rem; }
-  .skill-badge { padding: 0.45rem 0.65rem; }
-  .project-inner { min-height: 16rem; }
-  .neon-card { padding: 1rem; }
+  .btn-primary { 
+    padding: 0.625rem 1rem; 
+    font-size: 0.875rem;
+  }
+  .skill-badge { 
+    padding: 0.45rem 0.65rem; 
+    font-size: 0.8rem;
+  }
+  .project-inner { 
+    min-height: 16rem; 
+  }
+  .neon-card { 
+    padding: 1rem; 
+  }
+  .hero-frame {
+    height: 18rem;
+    width: 14rem;
+  }
+  .neon-text {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  .typing {
+    font-size: 1rem;
+  }
+  .section-padding {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-inner {
+    min-height: 15rem;
+  }
+  .hero-frame {
+    height: 20rem;
+    width: 16rem;
+  }
+  .neon-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-inner {
+    min-height: 14rem;
+  }
 }

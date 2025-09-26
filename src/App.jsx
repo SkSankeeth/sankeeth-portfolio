@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaChartBar, FaPhone } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaChartBar, FaPhone, FaBars, FaTimes } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa'
 import { SiMongodb, SiExpress, SiTailwindcss, SiJsonwebtokens, SiPandas, SiPython, SiNumpy } from 'react-icons/si'
@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 function App() {
   const [certificateModal, setCertificateModal] = useState({ open: false, title: '', subtitle: '', image: '' })
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   const openCertificate = (data) => {
     setCertificateModal({ open: true, ...data })
@@ -27,16 +28,53 @@ function App() {
             <a href="#certifications" className="text-sm text-white/80 hover:text-white">Certifications</a>
             <a href="#contact" className="text-sm text-white/80 hover:text-white">Contact</a>
           </nav>
-          <div className="flex items-center gap-3">
+          <button className="sm:hidden icon-neon" aria-label="Open menu" onClick={() => setMobileNavOpen(true)}>
+            <FaBars size={18} />
+          </button>
+          <div className="hidden sm:flex items-center gap-3">
             <a href="https://github.com/SkSankeeth" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-white/80 hover:text-white"><FaGithub size={20} /></a>
             <a href="https://linkedin.com/in/sankeeth-sithamparanathan-83765a30a" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-white/80 hover:text-white"><FaLinkedin size={20} /></a>
           </div>
         </div>
       </header>
 
+      {/* Mobile Drawer */}
+      {mobileNavOpen && (
+        <div className="drawer-overlay" onClick={() => setMobileNavOpen(false)}>
+          <div className="drawer-panel" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <div className="text-white text-lg font-semibold">Menu</div>
+              <button className="icon-neon" aria-label="Close menu" onClick={() => setMobileNavOpen(false)}>
+                <FaTimes size={16} />
+              </button>
+            </div>
+            <div className="flex flex-col gap-2">
+              {[
+                { href:'#home', label:'Home' },
+                { href:'#about', label:'About' },
+                { href:'#skills', label:'Skills' },
+                { href:'#projects', label:'Projects' },
+                { href:'#experience', label:'Experience' },
+                { href:'#education', label:'Education' },
+                { href:'#certifications', label:'Certifications' },
+                { href:'#contact', label:'Contact' },
+              ].map((item) => (
+                <a key={item.href} href={item.href} className="neon-card text-white/90" onClick={() => setMobileNavOpen(false)}>
+                  {item.label}
+                </a>
+              ))}
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <a className="icon-neon" href="https://github.com/SkSankeeth" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub size={18} /></a>
+              <a className="icon-neon" href="https://linkedin.com/in/sankeeth-sithamparanathan-83765a30a" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin size={18} /></a>
+            </div>
+          </div>
+        </div>
+      )}
+
       <section id="home" className="relative overflow-hidden pl-[20px]">
           <div className="hero-bg"></div>
-          <div className="grid w-full h-screen grid-cols-1 items-center gap-10 md:grid-cols-2">
+          <div className="grid w-full h-[85vh] sm:h-screen grid-cols-1 items-center gap-8 sm:gap-10 md:grid-cols-2">
             <div className="hero-foreground">
       {/* ...existing code... */}
             <motion.h1
@@ -86,7 +124,7 @@ function App() {
       <main className="mx-auto max-w-6xl px-4 sm:px-6">
         
 
-        <section id="about" className="min-h-screen flex items-center justify-center py-16 pb-20 sm:py-24 sm:pb-28 pl-[20px] pr-[20px]">
+        <section id="about" className="min-h-screen flex items-center justify-center py-12 pb-16 sm:py-16 sm:pb-20 md:py-24 md:pb-28 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-8 text-2xl font-semibold text-white">About Me</h2>
             <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-[260px,1fr]">
@@ -128,7 +166,7 @@ function App() {
           </div>
         </section>
         
-        <section id="skills" className="min-h-screen flex items-center justify-center py-16 sm:py-24 pl-[20px] pr-[20px] ">
+        <section id="skills" className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-24 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-6 text-2xl font-semibold text-white">Skills</h2>
             <div className="space-y-8">
@@ -200,10 +238,10 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="min-h-screen flex items-center justify-center py-16 pb-20 sm:py-24 sm:pb-28 pl-[20px] pr-[20px]">
+        <section id="projects" className="min-h-screen flex items-center justify-center py-12 pb-16 sm:py-16 sm:pb-20 md:py-24 md:pb-28 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-6 text-2xl font-semibold text-white">Projects</h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {/* MediLink Card */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
@@ -315,7 +353,7 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="min-h-screen flex items-center justify-center py-16 pb-20 sm:py-24 sm:pb-28 pl-[20px] pr-[20px]">
+        <section id="experience" className="min-h-screen flex items-center justify-center py-12 pb-16 sm:py-16 sm:pb-20 md:py-24 md:pb-28 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-6 text-2xl font-semibold text-white">Experience</h2>
             <div className="timeline">
@@ -366,7 +404,7 @@ function App() {
           </div>
         </section>
 
-        <section id="education" className="min-h-screen flex items-center justify-center py-16 pb-20 sm:py-24 sm:pb-28 pl-[20px] pr-[20px]">
+        <section id="education" className="min-h-screen flex items-center justify-center py-12 pb-16 sm:py-16 sm:pb-20 md:py-24 md:pb-28 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-6 text-2xl font-semibold text-white">Education</h2>
             <div className="timeline">
@@ -407,7 +445,7 @@ function App() {
           </div>
         </section>
 
-        <section id="certifications" className="min-h-screen flex items-center justify-center py-16 pb-20 sm:py-24 sm:pb-28 pl-[20px] pr-[20px]">
+        <section id="certifications" className="min-h-screen flex items-center justify-center py-12 pb-16 sm:py-16 sm:pb-20 md:py-24 md:pb-28 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-6 text-2xl font-semibold text-white">Certifications</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -504,7 +542,7 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="min-h-screen flex items-center justify-center py-16 sm:py-24 pl-[20px] pr-[20px]">
+        <section id="contact" className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-24 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-6 text-2xl font-semibold text-white">Contact Me</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
