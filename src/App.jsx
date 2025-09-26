@@ -81,7 +81,7 @@ function App() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="neon-text text-4xl font-extrabold leading-tight sm:text-6xl pl-[20px]"
+              className="neon-text text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl pl-[20px] pr-[20px]"
             >
               Sankeeth Sithamparanathan
             </motion.h1>
