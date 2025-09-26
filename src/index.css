@@ -311,6 +311,13 @@
   box-shadow: 0 0 12px rgba(0,209,255,0.95), 0 0 20px rgba(138,43,226,0.75);
 }
 
+/* Truncation helper */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .tech-float {
   position: absolute;
   width: 28px;

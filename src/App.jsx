@@ -97,10 +97,10 @@ function App() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6 pl-[20px]"
+              className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4 pl-[20px] pr-[20px]"
             >
-              <a href="/resume.pdf" download className="btn-primary">Download Resume</a>
-              <a href="#contact" className="card"><span className="text-white/90">Contact Me</span></a>
+              <a href="/resume.pdf" download aria-label="Download Resume" className="btn-primary w-full sm:w-auto py-3 text-base">Download Resume</a>
+              <a href="#contact" aria-label="Contact Me" className="card w-full sm:w-auto py-3 text-base"><span className="text-white/90">Contact Me</span></a>
             </motion.div>
           </div>
 
@@ -545,7 +545,7 @@ function App() {
         <section id="contact" className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-24 pl-[20px] pr-[20px]">
           <div className="w-full">
             <h2 className="mb-6 text-2xl font-semibold text-white">Contact Me</h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
               <button
                 className="neon-card flex items-center justify-between"
                 onClick={async () => { try { await navigator.clipboard.writeText('sankeethsithamparanathan@gmail.com') } catch(_) {} }}
@@ -558,7 +558,7 @@ function App() {
                     <div className="text-white/60 text-sm">Tap to copy</div>
                   </div>
                 </div>
-                <span className="text-white/50 text-sm">sankeethsithamparanathan@gmail.com</span>
+                <span className="text-white/50 text-sm truncate max-w-[55%] sm:max-w-none">sankeethsithamparanathan@gmail.com</span>
               </button>
 
               <a
@@ -590,7 +590,7 @@ function App() {
                     <div className="text-white/60 text-sm">Opens profile</div>
                   </div>
                 </div>
-                <span className="text-white/50 text-sm">/sankeeth-sithamparanathan-83765a30a</span>
+                <span className="text-white/50 text-sm truncate max-w-[55%] sm:max-w-none">/sankeeth-sithamparanathan-83765a30a</span>
               </a>
 
               <a
@@ -607,7 +607,7 @@ function App() {
                     <div className="text-white/60 text-sm">Open profile</div>
                   </div>
                 </div>
-                <span className="text-white/50 text-sm">@SkSankeeth</span>
+                <span className="text-white/50 text-sm truncate max-w-[55%] sm:max-w-none">@SkSankeeth</span>
               </a>
             </div>
           </div>
