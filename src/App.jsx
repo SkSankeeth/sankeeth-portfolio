@@ -185,14 +185,19 @@ function App() {
                 <h3 className="mb-3 text-sm font-medium text-white/70">Frontend</h3>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    {label:'HTML5', icon:'🟧'},
-                    {label:'CSS3', icon:'🔷'},
-                    {label:'JavaScript', icon:'🟨'},
-                    {label:'React', icon:'⚛︎'},
-                    {label:'Tailwind', icon:'🌬️'},
-                    {label:'Bootstrap', icon:'🅱️'},
+                    { label: 'HTML5', icon: '🟧' },
+                    { label: 'CSS3', icon: '🔷' },
+                    { label: 'JavaScript (ES6+)', icon: '🟨' },
+                    { label: 'React.js (Hooks, Context, Routing)', icon: '⚛︎' },
+                    { label: 'Next.js (basic)', icon: '⏭️' },
+                    { label: 'Tailwind CSS', icon: '🌬️' },
+                    { label: 'Responsive UI Design', icon: '📱' },
+                    { label: 'Vite', icon: '⚡' },
                   ].map((s) => (
-                    <span key={s.label} className="skill-badge"><span>{s.icon}</span>{s.label}</span>
+                    <span key={s.label} className="skill-badge">
+                      <span>{s.icon}</span>
+                      {s.label}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -201,56 +206,95 @@ function App() {
                 <h3 className="mb-3 text-sm font-medium text-white/70">Backend</h3>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    {label:'Node.js', icon:'🟩'},
-                    {label:'Express.js', icon:'🚏'},
-                    {label:'REST APIs', icon:'🔗'},
-                    {label:'JWT', icon:'🔐'},
-                    {label:'bcrypt', icon:'🔒'},
+                    { label: 'Node.js', icon: '🟩' },
+                    { label: 'Express.js', icon: '🚏' },
+                    { label: 'REST API Development', icon: '🔗' },
+                    { label: 'JWT Authentication', icon: '🔐' },
+                    { label: 'bcrypt', icon: '🔒' },
+                    { label: 'Socket.io (Real-Time Communication)', icon: '📡' },
+                    { label: 'Multer (File Uploads)', icon: '🖼️' },
                   ].map((s) => (
-                    <span key={s.label} className="skill-badge"><span>{s.icon}</span>{s.label}</span>
+                    <span key={s.label} className="skill-badge">
+                      <span>{s.icon}</span>
+                      {s.label}
+                    </span>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h3 className="mb-3 text-sm font-medium text-white/70">Database</h3>
+                <h3 className="mb-3 text-sm font-medium text-white/70">Databases & Cloud</h3>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    {label:'MongoDB', icon:'🍃'},
-                    {label:'MySQL', icon:'🗄️'},
-                    {label:'PHP', icon:'🐘'},
+                    { label: 'MongoDB (Mongoose)', icon: '🍃' },
+                    { label: 'MySQL', icon: '🗄️' },
+                    { label: 'Firebase (Auth & Firestore)', icon: '🔥' },
+                    { label: 'Google Cloud (basic)', icon: '☁️' },
                   ].map((s) => (
-                    <span key={s.label} className="skill-badge"><span>{s.icon}</span>{s.label}</span>
+                    <span key={s.label} className="skill-badge">
+                      <span>{s.icon}</span>
+                      {s.label}
+                    </span>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h3 className="mb-3 text-sm font-medium text-white/70">Tools</h3>
+                <h3 className="mb-3 text-sm font-medium text-white/70">Tools & Platforms</h3>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    {label:'Git', icon:'🔧'},
-                    {label:'GitHub', icon:'🐙'},
-                    {label:'VS Code', icon:'🧩'},
-                    {label:'Figma', icon:'🎨'},
-                    {label:'Postman', icon:'📮'},
-                    {label:'Firebase', icon:'🔥'},
-                    {label:'Canva', icon:'🎨'},
+                    { label: 'Git', icon: '🔧' },
+                    { label: 'GitHub', icon: '🐙' },
+                    { label: 'Postman', icon: '📮' },
+                    { label: 'Firebase Console', icon: '🔥' },
+                    { label: 'Cursor AI', icon: '💡' },
+                    { label: 'GitHub Copilot', icon: '🤖' },
+                    { label: 'ChatGPT', icon: '🧠' },
+                    { label: 'VS Code', icon: '🧩' },
                   ].map((s) => (
-                    <span key={s.label} className="skill-badge"><span>{s.icon}</span>{s.label}</span>
+                    <span key={s.label} className="skill-badge">
+                      <span>{s.icon}</span>
+                      {s.label}
+                    </span>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h3 className="mb-3 text-sm font-medium text-white/70">Others</h3>
+                <h3 className="mb-3 text-sm font-medium text-white/70">Concepts & Architecture</h3>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    {label:'Python (Basics)', icon:'🐍'},
-                    {label:'Power BI', icon:'📊'},
-                    {label:'Google Analytics', icon:'📈'},
+                    { label: 'CRUD Operations', icon: '📝' },
+                    { label: 'Authentication & Authorization', icon: '🛡️' },
+                    { label: 'Role-Based Access Control (RBAC)', icon: '👥' },
+                    { label: 'MVC Architecture', icon: '🏗️' },
+                    { label: 'WebSockets', icon: '🔄' },
+                    { label: 'API Security Basics', icon: '🧱' },
+                    { label: 'Rate Limiting', icon: '🚦' },
+                    { label: 'Input Validation', icon: '✅' },
                   ].map((s) => (
-                    <span key={s.label} className="skill-badge"><span>{s.icon}</span>{s.label}</span>
+                    <span key={s.label} className="skill-badge">
+                      <span>{s.icon}</span>
+                      {s.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-sm font-medium text-white/70">Development Practices</h3>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { label: 'Version Control', icon: '📂' },
+                    { label: 'RESTful Design', icon: '🌐' },
+                    { label: 'Clean Code Practices', icon: '🧼' },
+                    { label: 'Agile Collaboration', icon: '🤝' },
+                    { label: 'API Documentation', icon: '📚' },
+                  ].map((s) => (
+                    <span key={s.label} className="skill-badge">
+                      <span>{s.icon}</span>
+                      {s.label}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -262,6 +306,49 @@ function App() {
           <div className="w-full">
             <h2 className="section-title">Projects</h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+              {/* OnlyFarmers Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+                className="project-card"
+              >
+                <div className="project-inner h-56">
+                  <div className="project-face">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-2xl">🌾</span>
+                      <div className="project-title">OnlyFarmers – Agricultural E-Commerce Platform</div>
+                    </div>
+                    <div className="mt-3 tech-row text-white/80">
+                      <span className="skill-badge"><FaReact />React</span>
+                      <span className="skill-badge"><FaNodeJs />Node.js</span>
+                      <span className="skill-badge"><SiExpress />Express.js</span>
+                      <span className="skill-badge"><SiMongodb />MongoDB</span>
+                      <span className="skill-badge"><SiTailwindcss />Tailwind</span>
+                      <span className="skill-badge"><SiJsonwebtokens />JWT</span>
+                      <span className="skill-badge">Socket.io</span>
+                      <span className="skill-badge">Multer</span>
+                      <span className="skill-badge">Vite</span>
+                    </div>
+                  </div>
+                  <div className="project-face back">
+                    <div className="text-white/90">
+                      Features: role-based auth (Farmer/Buyer/Admin/Transporter), real-time auction bidding, secure image uploads,
+                      and responsive MERN stack UI.
+                    </div>
+                    <a
+                      className="github-btn mt-4"
+                      href="https://github.com/SkSankeeth/Farmer-Live-Auction-Website.git"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaGithub /> View on GitHub
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
               {/* AuthFlow Card */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
